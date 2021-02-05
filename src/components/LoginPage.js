@@ -25,7 +25,7 @@ class LoginPage extends Component {
     }
 
     componentWillReceiveProps(nextProps){
-        if(nextProps.user.erros !== ""){
+        if(nextProps.user.errors.length !== 0){
             this.setState({
                 errors: nextProps.user.errors,
                 showErrorToast: true
@@ -70,7 +70,7 @@ class LoginPage extends Component {
 
     toggleErrorToast = () => {
         this.setState({
-            showErrorToast: !this.state.showErrorToast
+            showErrorToast: false
         });
     }
 
@@ -79,8 +79,6 @@ class LoginPage extends Component {
             <div className="container">
                 <Toast 
                     show={this.state.showErrorToast} 
-                    autohide
-                    delay={5000}
                     animation={true}
                     className="login-error-toast"
                 >

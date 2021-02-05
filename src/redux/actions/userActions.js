@@ -5,6 +5,13 @@ import {
     SET_AUTHENTICATED
 } from "../types";
 
+const setCookie = (cookieValue) => {
+    let cookieString = "username=" + cookieValue + "; ";
+    let date = new Date(Date.now()+86400000).toUTCString();
+    cookieString += "expires=" + date + "; ";
+    document.cookie = cookieString;
+}
+
 
 
 export const loginUser = (userData, history) => (dispatch) => {
@@ -16,8 +23,10 @@ export const loginUser = (userData, history) => (dispatch) => {
                 dispatch({ type: SET_ERRORS, payload: "Wrong Credentials"});
             }
             else{
+                setCookie(userDetails.data[0].name);
                 dispatch({type: SET_AUTHENTICATED});
                 dispatch({type: SET_USER, payload: userDetails.data[0]})
+                history.push("/");
             }
         })
         .catch(err => {
