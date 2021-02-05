@@ -5,6 +5,9 @@ import "../css/LoginPageCSS.css";
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import  Toast  from 'react-bootstrap/Toast';
+import { MdError } from 'react-icons/md'
+import {AiFillCloseCircle } from 'react-icons/ai';
 
 
 class LoginPage extends Component {
@@ -14,7 +17,8 @@ class LoginPage extends Component {
         this.state = {
             email: "",
             phone: "",
-            errors: ""
+            errors: "",
+            showErrorToast: false
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -23,7 +27,8 @@ class LoginPage extends Component {
     componentWillReceiveProps(nextProps){
         if(nextProps.user.erros !== ""){
             this.setState({
-                errors: nextProps.user.errors
+                errors: nextProps.user.errors,
+                showErrorToast: true
             });
         }
     }
@@ -63,9 +68,46 @@ class LoginPage extends Component {
 
     }
 
+    toggleErrorToast = () => {
+        this.setState({
+            showErrorToast: !this.state.showErrorToast
+        });
+    }
+
     render() {
         return (
             <div className="container">
+                <Toast 
+                    show={this.state.showErrorToast} 
+                    autohide
+                    delay={5000}
+                    animation={true}
+                    className="login-error-toast"
+                >
+                    <Toast.Header
+                        className="login-error-toast-header"
+                        closeButton={false}
+                    >
+                        <MdError 
+                            className="login-error-toast-icon"
+                            size="3rem"
+                        />
+
+                        <strong>Login Failed</strong>
+
+                        <AiFillCloseCircle 
+                            className="login-error-toast-close-icon"
+                            size="3rem"
+                            onClick={this.toggleErrorToast}
+                        />
+                    </Toast.Header>
+                    <hr className="login-error-toast-hr" />
+                    <Toast.Body className="login-error-toast-body">
+                        {this.state.errors}
+                    </Toast.Body>
+                </Toast>
+
+
                 <Card className="login-card">
                     <Form onSubmit={this.handleSubmit}>
                         <Form.Label>Email Address: </Form.Label>

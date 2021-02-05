@@ -2,6 +2,7 @@
     margin-top: 10rem;
     display: flex;
     justify-content: center;
+    position: relative;
 }
 
 .login-card{
@@ -40,3 +41,49 @@
     margin-top: 1rem;
 }
 
+
+.login-error-toast{
+    position: absolute;
+    top: -8rem;
+    right: 1rem;
+    width: 20rem;
+    height: 6rem;
+    border: 1px solid #ff0000;
+    box-shadow: 0 4px 8px 0 rgba(255, 0, 0, 0.5);
+    border-radius: 0.5rem;
+}
+
+.login-error-toast-header{
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 1rem;
+    color: #ff0000;
+    font-size: 1.10rem;
+}
+
+.login-error-toast-icon{
+    padding-right: 0.25rem;
+    padding-left: 0.5rem;
+    height: 1.5rem;
+}
+
+.login-error-toast-close-icon{
+    margin-left: 7rem;
+    height: 1.5rem;
+}
+
+.login-error-toast-hr{
+    width: 18rem;
+    background: #ff0000;
+    border: 0;
+    height: 0.1rem;
+    opacity: 0.4;
+}
+
+.login-error-toast-body{
+    display: flex;
+    justify-content: flex-start;
+    font-size: 1.1rem;
+    color: #ff0000;
+    margin-left: 2rem;
+}
