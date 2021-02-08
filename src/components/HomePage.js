@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import PersonalHeader from "./PersonalHeader";
+
 
 class HomePage extends Component {
     render() {
         return (
             <div className="home-container">
-                <h1>Hello from Home Page</h1>
+                <PersonalHeader />
             </div>
         );
     }

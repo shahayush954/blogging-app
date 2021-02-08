@@ -2,8 +2,8 @@ import './App.css';
 import React, { Component } from 'react';
 import HomePage from "./components/HomePage";
 import LoginPage from "./components/LoginPage"; 
+import NewPostPage from "./components/NewPostPage";
 import { BrowserRouter, Route, Switch} from "react-router-dom";
-import { getCookies } from "./redux/actions/userActions";
 import { connect } from "react-redux";
 class App extends Component{
 
@@ -22,15 +22,18 @@ class App extends Component{
 	}
 
 	callLoginPage = () => {
-		console.log("Inside LoginPage");
 		window.history.pushState(null,null,"/login");
 		return LoginPage;
 	}
 
 	callHomePage = () => {
-		console.log("Inside HomePage");
 		window.history.pushState(null,null,"/");
 		return HomePage;
+	}
+
+	callAddNewPostPage = () => {
+		window.history.pushState(null, null, "/add-new-post")
+		return NewPostPage;
 	}
 	render(){
 		return (
@@ -52,6 +55,16 @@ class App extends Component{
 							component={
 								this.checkUserAlreadyLoggedIn() ? 
 									this.callHomePage() : 
+									this.callLoginPage()
+							}
+						/>
+
+						<Route
+							exact
+							path="/add-new-post"
+							component={
+								this.checkUserAlreadyLoggedIn() ? 
+									this.callAddNewPostPage() :
 									this.callLoginPage()
 							}
 						/>

@@ -1,0 +1,39 @@
+
+.personal-header-container{
+    margin: 0 auto;
+    text-align: left;
+    width: 50rem;
+    background-color: #e9ecef;
+    margin-top: 2rem; 
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.personal-header-title{
+    margin-left: 4rem;
+    margin-bottom: 0.5rem;
+}
+
+.personal-header-user-details{
+    margin-left: 4rem;
+    margin-top: 0.4rem;
+    margin-bottom: 0.4rem;
+}
+
+.personal-header-hr{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    height: 0.1rem;
+    width: 45rem;
+    background-color: #9c9d9e;
+}
+
+.personal-header-button{
+    height: 3rem;
+    width: 10rem;
+    color: white;
+    background-color: #0080f9;
+    border: 0;
+    border-radius: 0.25rem;
+}

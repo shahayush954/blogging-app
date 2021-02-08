@@ -1,0 +1,41 @@
+.new-post-container{
+    margin-top: 10rem;
+    display: flex;
+    justify-content: center;
+}
+
+.new-post-card{
+    width: 25rem;
+    border: 1px solid #d9d9d9;
+    border-radius: 0.5rem;
+    text-align: left;
+    padding-left: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    font-size: 1.25rem;
+    color: #737373;
+}
+
+.new-post-input{
+    width: 20rem;
+    height: 1.5rem;
+    border: 2px solid  #d9d9d9;
+    border-radius: 0.5rem;
+    padding-left: 0.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: #737373;
+}
+
+.new-post-submit{
+    width: 15rem;
+    height: 2rem;
+    background-color: #0275d8;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-top: 1rem;
+}
