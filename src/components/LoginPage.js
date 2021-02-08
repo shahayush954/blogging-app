@@ -10,6 +10,10 @@ import { MdError } from 'react-icons/md'
 import {AiFillCloseCircle } from 'react-icons/ai';
 
 
+// Shanna@melissa.tv
+// 010-692-6593 x09125
+
+
 class LoginPage extends Component {
 
     constructor(){
@@ -58,7 +62,6 @@ class LoginPage extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        console.log("inside handle submit");
         let userData = {
             email: this.state.email,
             phone: this.state.phone

@@ -7,7 +7,8 @@ import {
 const initialState = {
     authenticated: false,
     errors: "",
-    user: {},
+    userDetails: {},
+    userCookie: ""
 }
 
 const userReducer = (state=initialState, action) => {
@@ -21,7 +22,9 @@ const userReducer = (state=initialState, action) => {
         case SET_USER:
             return {
                 ...state,
-                user: action.payload
+                errors: "",
+                userDetails: action.payload.user,
+                userCookie: action.payload.user_cookie
             };
 
         case SET_ERRORS:
