@@ -110,6 +110,7 @@ class LoginPage extends Component {
 
 
                 <Card className="login-card">
+                    <h3>Login</h3>
                     <Form onSubmit={this.handleSubmit}>
                         <Form.Label>Email Address: </Form.Label>
                         <br/>
