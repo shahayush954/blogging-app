@@ -1,5 +1,6 @@
 import {
-    CREATE_NEW_POST
+    CREATE_NEW_POST,
+    SET_POSTS,
 } from "../types";
 import axios from "axios";
 
@@ -22,4 +23,19 @@ export const createPost = (newPost,history) => (dispatch) => {
         .catch(err => {
             console.log(err);
         })
+}
+
+
+export const getAllPosts = () => (dispatch) => {
+    let url = "https://jsonplaceholder.typicode.com/posts";
+    axios.get(url)
+         .then((result) => {
+             dispatch({
+                 type: SET_POSTS,
+                 payload: result.data,
+             });
+         })
+         .catch(err => {
+             console.log(err);
+         });
 }

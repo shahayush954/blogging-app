@@ -1,0 +1,28 @@
+.individual-post-container{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.individual-post-card{
+    width: 48rem;
+    max-width: 48rem;
+    border: 1px solid #d9d9d9;
+    border-radius: 0.5rem;
+    text-align: left;
+    padding-left: 3rem;
+    color: #737373;
+    box-shadow: 0 4px 8px 0 rgba(181,186,190,1);
+}
+
+.individual-post-title{
+    font-size: 1.25rem;
+    font-weight: 500;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.individual-post-body{
+    padding-bottom: 2rem;
+    margin-right: 2rem;
+}
