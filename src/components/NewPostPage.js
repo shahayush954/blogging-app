@@ -18,10 +18,10 @@ class NewPostPage extends Component {
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
 
-    componentWillReceiveProps(){
-        console.log("Inside");
+    componentDidMount(){
         this.setState({
             userId: this.props.user.userDetails.id
         });
@@ -43,9 +43,8 @@ class NewPostPage extends Component {
     render() {
         return (
             <div className="new-post-container">
-                {this.state.userId}
                 <Card className="new-post-card">
-
+                    <h3>What's on your Mind?</h3>
                     <Form onSubmit={this.handleSubmit}>
                         <Form.Label>Title: </Form.Label>
                         <br />
@@ -54,6 +53,7 @@ class NewPostPage extends Component {
                             value={this.state.title}
                             onChange={this.handleChange}
                             className="new-post-input"
+                            placeholder="Title of you Post"
                         />
                         <br />
                         <Form.Label>Body: </Form.Label>
@@ -62,19 +62,23 @@ class NewPostPage extends Component {
                             name="body"
                             value={this.state.body}
                             onChange={this.handleChange}
-                            className="new-post-input"
+                            className="new-post-input new-post-input-body"
+                            as="textarea"
+                            placeholder="Your post content"
                         />
                         <br />
                         <Form.Label>User Id: </Form.Label>
                         <br />
                         <Form.Control 
-                            className="new-post-input"
+                            type="number"
+                            readOnly
+                            className="new-post-input-readonly"
                             value={this.state.userId}
                         />
                         <br />
                         <Button
                             className="new-post-submit"
-                        >Submit</Button>
+                        >Create</Button>
                     </Form>
 
                 </Card>

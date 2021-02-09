@@ -1,5 +1,5 @@
 .new-post-container{
-    margin-top: 10rem;
+    margin-top: 7rem;
     display: flex;
     justify-content: center;
 }
@@ -10,10 +10,10 @@
     border-radius: 0.5rem;
     text-align: left;
     padding-left: 2rem;
-    padding-top: 2rem;
     padding-bottom: 2rem;
     font-size: 1.25rem;
     color: #737373;
+    box-shadow: 0 8px 16px 0 rgba(181,186,190,1);
 }
 
 .new-post-input{
@@ -27,6 +27,24 @@
     color: #737373;
 }
 
+.new-post-input-readonly{
+    width: 20rem;
+    height: 1.5rem;
+    border: 2px solid  #d9d9d9;
+    border-radius: 0.5rem;
+    padding-left: 0.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: #737373;
+    background: #e9ecef;
+}
+
+.new-post-input-body{
+    height: 5rem;
+    max-width: 20rem;
+    min-height: 5rem;
+}
+
 .new-post-submit{
     width: 15rem;
     height: 2rem;
@@ -38,4 +56,5 @@
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     margin-top: 1rem;
+    cursor: pointer;
 }
