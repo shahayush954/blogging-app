@@ -28,6 +28,8 @@ class LoginPage extends Component {
         this.handleChange = this.handleChange.bind(this);
     }
 
+    //We have used componenetWillRecieveProps so that we can change the errors field in the
+    //state to raise a toast error in case of any errors. 
     componentWillReceiveProps(nextProps){
         if(nextProps.user.errors.length !== 0){
             this.setState({
@@ -37,20 +39,11 @@ class LoginPage extends Component {
         }
     }
 
-    // static getDerivedStateFromProps(nextProps, prevState){
-    //     if(nextProps.user.errors !== prevState.user.errors){
-    //         return {
-    //             ...prevState,
-    //             errors: nextProps.user.errors
-    //         }
-    //     }
-    //     else{
-    //         return {
-    //             ...prevState
-    //         }
-    //     }
-    // }
 
+    // handleChange function -> function for handling the controlled form feature of React
+    // Whenever any of the field values are changed this function is called to bind it to the respective
+    // field values in the state
+    // This ensures that the state has the most recent values at any given time.
     handleChange = (event) => {
         let name = event.target.name;
         let value = event.target.value;
@@ -60,6 +53,9 @@ class LoginPage extends Component {
         });
     }
 
+    // handleSubmit function -> handles the task of logging in the user.
+    // In this we create a userData object and then pass it on to loginUser action along 
+    // with a history object for redirection.
     handleSubmit = (event) => {
         event.preventDefault();
         let userData = {
@@ -71,6 +67,8 @@ class LoginPage extends Component {
 
     }
 
+
+    //toggleErrorToast function -> handles the closing of the Toast error.
     toggleErrorToast = () => {
         this.setState({
             showErrorToast: false
