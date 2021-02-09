@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import HomePage from "./components/HomePage";
 import LoginPage from "./components/LoginPage"; 
 import NewPostPage from "./components/NewPostPage";
+import SinglePostPage from "./components/SinglePostPage";
 import { BrowserRouter, Route, Switch} from "react-router-dom";
 import { connect } from "react-redux";
 class App extends Component{
@@ -67,6 +68,12 @@ class App extends Component{
 									this.callAddNewPostPage() :
 									this.callLoginPage()
 							}
+						/>
+
+						<Route 
+							exact
+							path="/:postId"
+							component={SinglePostPage}
 						/>
 					</Switch>
 				</BrowserRouter>

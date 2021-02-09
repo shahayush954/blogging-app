@@ -22,12 +22,18 @@ class NewPostPage extends Component {
         this.handleChange = this.handleChange.bind(this);
     }
 
+
+    // We use componentDidMount to get the userId from the store after the component has been mounted
+    // so that it can be directly used in the non-editable userId field. 
     componentDidMount(){
         this.setState({
             userId: this.props.user.userDetails.id
         });
     }
 
+    // handleSubmit function -> handles the clicking of the create new post Button
+    // In this we create a post object and then pass it on to createPost action along 
+    // with a history object for redirection.
     handleSubmit = (event) => {
         event.preventDefault();
         let postData = {
@@ -39,6 +45,11 @@ class NewPostPage extends Component {
         this.props.createPost(postData,this.props.history);
     }
 
+
+    // handleChange function -> function for handling the controlled form feature of React
+    // Whenever any of the field values are changed this function is called to bind it to the respective
+    // field values in the state
+    // This ensures that the state has the most recent values at any given time.
     handleChange = (event) => {
         let name = event.target.name;
         let value = event.target.value;

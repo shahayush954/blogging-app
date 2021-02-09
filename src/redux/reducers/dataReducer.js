@@ -8,6 +8,7 @@ const initialState = {
 
 const dataReducer = (state=initialState, action) => {
     switch(action.type){
+
         case CREATE_NEW_POST:
             let newPostsArray = state.posts;
             newPostsArray.push(action.payload);
