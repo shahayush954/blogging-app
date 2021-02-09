@@ -4,6 +4,7 @@ import "../css/NewPostPageCSS.css";
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import { createPost } from "../redux/actions/dataActions";
 
 
 
@@ -27,8 +28,15 @@ class NewPostPage extends Component {
         });
     }
 
-    handleSubmit = () => {
+    handleSubmit = (event) => {
+        event.preventDefault();
+        let postData = {
+            title: this.state.title,
+            body: this.state.body,
+            userId: this.state.userId
+        };
 
+        this.props.createPost(postData,this.props.history);
     }
 
     handleChange = (event) => {
@@ -78,6 +86,7 @@ class NewPostPage extends Component {
                         <br />
                         <Button
                             className="new-post-submit"
+                            onClick={this.handleSubmit}
                         >Create</Button>
                     </Form>
 
@@ -92,4 +101,8 @@ const mapStateToProps = (state) => ({
     user: state.user
 });
 
-export default connect(mapStateToProps, {})(NewPostPage);
+const mapActionsToProps = {
+    createPost
+};
+
+export default connect(mapStateToProps, mapActionsToProps)(NewPostPage);
