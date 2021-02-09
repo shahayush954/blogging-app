@@ -7,7 +7,7 @@ const trimLength = 61;
 
 class IndividualPosts extends Component {
 
-
+    //getTrimedText function gives back the trimed body as per the length defined in the above constant trimLength
     getTrimedText = () => {
         let displayString = "";
         let body = this.props.post.body;
@@ -18,6 +18,10 @@ class IndividualPosts extends Component {
         return displayString;
     }
 
+    //compareDisplayLength is an utility function that is used to check if the trimed body length is equal
+    //to the actual body length or not
+    //returns true if both lengths are not equal
+    //returns false otherwise
     compareDisplayLength(displayLength, bodyLength){
         if(displayLength !== bodyLength){
             return true;
