@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import Card from 'react-bootstrap/Card';
+import Comments from "./Comments";
 import "../css/SinglePostPageCSS.css";
 import {IoMdArrowRoundBack} from "react-icons/io"
+import { getAllComments } from "../redux/actions/dataActions"
 
 
 class SinglePostPage extends Component {
@@ -29,6 +31,7 @@ class SinglePostPage extends Component {
     //we use componentDidMount to fetch for which post or blog we are viewing this page for.
     componentDidMount(){
         let postId = Number(this.props.match.params.postId);
+        this.props.getAllComments(postId);
         let currentPagePost = this.props.posts.find((onePost) => onePost.id === postId);
         this.setState({
             post: currentPagePost
@@ -42,6 +45,13 @@ class SinglePostPage extends Component {
 
 
     render() {
+        let user = {};
+        let commentsMarkUp = this.props.allComments.map((comment) => 
+                <Comments
+                comment={comment}
+                />
+        );
+
         return (
             <div className="container">
                 <Card className="single-page-card">
@@ -59,7 +69,7 @@ class SinglePostPage extends Component {
                         {this.state.post.body}
                     </Card.Body>
                     <hr className="single-page-hr"/>
-
+                    {commentsMarkUp}
                 </Card>
                 
             </div>
@@ -70,9 +80,12 @@ class SinglePostPage extends Component {
 const mapStateToProps = (state) => ({
     posts: state.data.posts,
     user: state.user.userDetails,
-    allUsers: state.user.allUsers
+    allUsers: state.user.allUsers,
+    allComments: state.data.allComments
 });
 
-const mapActionsToProps = {};
+const mapActionsToProps = {
+    getAllComments
+};
 
 export default connect(mapStateToProps, mapActionsToProps)(SinglePostPage);

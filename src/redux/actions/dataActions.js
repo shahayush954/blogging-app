@@ -1,6 +1,7 @@
 import {
     CREATE_NEW_POST,
     SET_POSTS,
+    SET_COMMENTS,
 } from "../types";
 import axios from "axios";
 
@@ -39,3 +40,22 @@ export const getAllPosts = () => (dispatch) => {
              console.log(err);
          });
 }
+
+
+export const getAllComments = (postId) => (dispatch) => {
+
+    let url = `https://jsonplaceholder.typicode.com/posts/${postId}/comments`;
+    axios.get(url)
+         .then((result) => {
+             dispatch({
+                 type: SET_COMMENTS,
+                 payload: result.data,
+             });
+         })
+         .catch(err => {
+             console.log(err);
+         })
+
+}
+
+

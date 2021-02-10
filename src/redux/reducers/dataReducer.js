@@ -1,10 +1,12 @@
 import {
     CREATE_NEW_POST, 
+    SET_COMMENTS, 
     SET_POSTS
 } from "../types";
 const initialState = {
     posts: [],
     singlePost: {},
+    allComments: [],
 };
 
 const dataReducer = (state=initialState, action) => {
@@ -23,6 +25,12 @@ const dataReducer = (state=initialState, action) => {
             return {
                 ...state,
                 posts: [...action.payload]
+            };
+
+        case SET_COMMENTS:
+            return {
+                ...state,
+                allComments: [...action.payload],
             };
 
         default:
