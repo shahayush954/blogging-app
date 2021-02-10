@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { getAllPosts } from "../redux/actions/dataActions";
+import { getAllUsers } from "../redux/actions/userActions";
 import PersonalHeader from "./PersonalHeader";
 import IndividualPosts from "./IndividualPosts";
 
@@ -10,6 +11,7 @@ class HomePage extends Component {
 
     componentDidMount(){
         this.props.getAllPosts();
+        this.props.getAllUsers();
     }
 
     render() {
@@ -35,7 +37,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapActionsToProps = {
-    getAllPosts
+    getAllPosts,
+    getAllUsers
 }
 
 export default connect(mapStateToProps, mapActionsToProps)(HomePage);

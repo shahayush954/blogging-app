@@ -13,7 +13,7 @@ export const createPost = (newPost,history) => (dispatch) => {
     let url = "https://jsonplaceholder.typicode.com/posts";
     axios.post(url, newPost)
         .then((result) => {
-            newPost.postId = result.data.id;
+            newPost.id = result.data.id;
             dispatch({
                 type: CREATE_NEW_POST,
                 payload: newPost
@@ -25,7 +25,7 @@ export const createPost = (newPost,history) => (dispatch) => {
         })
 }
 
-
+//getAllPosts method -> Create a GET request to fetch all posts to be fetched on the home page.
 export const getAllPosts = () => (dispatch) => {
     let url = "https://jsonplaceholder.typicode.com/posts";
     axios.get(url)

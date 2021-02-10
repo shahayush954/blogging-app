@@ -4,3 +4,4 @@ export const SET_AUTHENTICATED = "set_authenticated";
 export const SET_UNAUTHENTICATED = "set_unauthenticated";
 export const CREATE_NEW_POST = "create_new_post";
 export const SET_POSTS = "set_posts";
+export const SET_ALL_USERS = "set_all_users";

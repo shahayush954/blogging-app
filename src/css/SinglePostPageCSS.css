@@ -1,0 +1,28 @@
+.single-page-card{
+    background-color: #f2f2f2;
+    color: #666666;
+    margin-top: -6rem;
+    text-align: left;
+    width: 60rem;
+    padding-top: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 2rem;
+    box-shadow: 0 8px 16px 0 rgba(181,186,190,1);
+}
+
+.single-page-title{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.single-page-subtitle{
+    margin-top: 0.5rem;
+    font-style: italic;
+    font-weight: 500;
+}
+
+.single-page-body{
+    margin-top: 1rem;
+    text-align: justify;
+}

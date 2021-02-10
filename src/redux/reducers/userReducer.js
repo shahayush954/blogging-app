@@ -1,14 +1,16 @@
 import {
     SET_USER,
     SET_ERRORS,
-    SET_AUTHENTICATED
+    SET_AUTHENTICATED,
+    SET_ALL_USERS
 } from "../types";
 
 const initialState = {
     authenticated: false,
     errors: "",
     userDetails: {},
-    userCookie: ""
+    userCookie: "",
+    allUsers: []
 }
 
 const userReducer = (state=initialState, action) => {
@@ -31,6 +33,12 @@ const userReducer = (state=initialState, action) => {
             return {
                 ...state,
                 errors: action.payload
+            }
+
+        case SET_ALL_USERS:
+            return {
+                ...state,
+                allUsers: [...action.payload]
             }
 
         default:

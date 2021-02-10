@@ -2,7 +2,8 @@ import axios from "axios";
 import {
     SET_USER,
     SET_ERRORS,
-    SET_AUTHENTICATED
+    SET_AUTHENTICATED,
+    SET_ALL_USERS
 } from "../types";
 
 // setCookie method -> sets a single username name cookie to the document.
@@ -58,3 +59,19 @@ export const loginUser = (userData, history) => (dispatch) => {
             console.log(err);
         });
 };
+
+//getAllUsers method -> Create a GET request to fetch all users to and store it in redux store
+//for future use.
+export const getAllUsers = () => (dispatch) => {
+    let url = "https://jsonplaceholder.typicode.com/users";
+    axios.get(url)
+         .then(result => {
+            dispatch({
+                type: SET_ALL_USERS,
+                payload: result.data,
+            });
+         })
+         .catch(err => {
+             console.log(err);
+         })
+}

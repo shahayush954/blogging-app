@@ -32,10 +32,6 @@ class App extends Component{
 		return HomePage;
 	}
 
-	callAddNewPostPage = () => {
-		window.history.pushState(null, null, "/add-new-post")
-		return NewPostPage;
-	}
 	render(){
 		return (
 			<div className="App">
@@ -63,11 +59,7 @@ class App extends Component{
 						<Route
 							exact
 							path="/add-new-post"
-							component={
-								this.checkUserAlreadyLoggedIn() ? 
-									this.callAddNewPostPage() :
-									this.callLoginPage()
-							}
+							component={NewPostPage}
 						/>
 
 						<Route 
