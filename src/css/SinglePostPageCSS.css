@@ -26,3 +26,17 @@
     margin-top: 1rem;
     text-align: justify;
 }
+
+.single-page-back-button{
+    cursor: pointer;
+}
+
+.single-page-hr{
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border: 1px solid #9c9d9e;
+    border-radius: 50%;
+    height: 0.07rem;
+    width: 58rem;
+    background-color: #9c9d9e;
+}

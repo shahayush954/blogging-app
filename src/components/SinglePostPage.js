@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import Card from 'react-bootstrap/Card';
 import "../css/SinglePostPageCSS.css";
+import {IoMdArrowRoundBack} from "react-icons/io"
 
 
 class SinglePostPage extends Component {
@@ -35,11 +36,19 @@ class SinglePostPage extends Component {
         this.getAuthorDetails(currentPagePost.userId);
     }
 
+    goBack = () => {
+        window.history.back();
+    }
+
 
     render() {
         return (
             <div className="container">
                 <Card className="single-page-card">
+                    <IoMdArrowRoundBack 
+                        className="single-page-back-button"
+                        onClick={this.goBack}
+                    />
                     <Card.Title className="single-page-title">
                         {this.state.post.title}
                     </Card.Title>
@@ -49,6 +58,8 @@ class SinglePostPage extends Component {
                     <Card.Body className="single-page-body">
                         {this.state.post.body}
                     </Card.Body>
+                    <hr className="single-page-hr"/>
+
                 </Card>
                 
             </div>
