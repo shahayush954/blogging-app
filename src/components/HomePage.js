@@ -18,8 +18,12 @@ class HomePage extends Component {
         }
 
         this.changePostsPerPage = this.changePostsPerPage.bind(this);
+        this.getPageNumberList = this.getPageNumberList.bind(this);
+        this.buildPostMarkUp = this.buildPostMarkUp.bind(this);
+        this.buildPagesMarkUp = this.buildPagesMarkUp.bind(this);
     }
 
+    //change the posts based on the number selected that are displayed at the bottom.
     changePostsPerPage = (event) => {
         let page = Number(event.target.id);
 
@@ -33,17 +37,20 @@ class HomePage extends Component {
         this.props.getAllUsers();
     }
 
-    render() {
-
+    //Returns the list of numbers that will needed based on the number of posts given that we are
+    //displaying 10 posts per page.
+    getPageNumberList = () => {
         let pageNumbers = [];
         for(let i=1; i<=Math.ceil(this.props.posts.length / this.state.postsPerPage ); i++){
             pageNumbers.push(i);
         }
+        return pageNumbers;
+    }
 
+    //Builds the post mark up from the posts array based on the page selected.
+    buildPostMarkUp = () => {
         let startIndex = (this.state.currentPage-1) * this.state.postsPerPage;
         let endIndex = (this.state.currentPage * this.state.postsPerPage);
-
-        console.log("Start:" + startIndex + "End:" + endIndex);
 
         let currentPagePosts = this.props.posts.slice(startIndex, endIndex);
 
@@ -54,6 +61,12 @@ class HomePage extends Component {
             />
         );
 
+        return postMarkUp;
+    }
+
+    //Builds the mark up for the page numbers that are displayed at the bottom.
+    buildPagesMarkUp = () => {
+        let pageNumbers = this.getPageNumberList();
         let pagesMarkUp = pageNumbers.map(number =>  
             <li
                 key={number}
@@ -64,6 +77,16 @@ class HomePage extends Component {
                 {number}
             </li>
         );
+
+        return pagesMarkUp;
+    }
+
+    render() {
+
+        
+        let postMarkUp = this.buildPostMarkUp();
+        let pagesMarkUp = this.buildPagesMarkUp();
+
         return (
             <div className="home-container">
                 <PersonalHeader />

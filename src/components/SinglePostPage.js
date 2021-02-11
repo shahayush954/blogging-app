@@ -17,6 +17,7 @@ class SinglePostPage extends Component {
         }
 
         this.getAuthorDetails = this.getAuthorDetails.bind(this);
+        this.buildCommentsMarkUp = this.buildCommentsMarkUp.bind(this);
     }
 
     //getAuthorDetails is an utitlity function that sets the current author to state who has written this 
@@ -39,18 +40,27 @@ class SinglePostPage extends Component {
         this.getAuthorDetails(currentPagePost.userId);
     }
 
+    //simply goes back one level on the browser.
     goBack = () => {
         window.history.back();
     }
 
 
-    render() {
+    //Returns the Mark up for all the comments that are on this post. 
+    buildCommentsMarkUp = () => {
         let commentsMarkUp = this.props.allComments.map((comment,index) => 
                 <Comments
                     key={index}
                     comment={comment}
                 />
         );
+        return commentsMarkUp;
+    }
+
+
+    render() {
+        
+        let commentsMarkUp = this.buildCommentsMarkUp();
 
         return (
             <div className="container">
@@ -69,6 +79,7 @@ class SinglePostPage extends Component {
                         {this.state.post.body}
                     </Card.Body>
                     <hr className="single-page-hr"/>
+                    <span className="single-page-comments-title">Comments: </span>
                     {commentsMarkUp}
                 </Card>
                 
