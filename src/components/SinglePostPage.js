@@ -45,10 +45,10 @@ class SinglePostPage extends Component {
 
 
     render() {
-        let user = {};
-        let commentsMarkUp = this.props.allComments.map((comment) => 
+        let commentsMarkUp = this.props.allComments.map((comment,index) => 
                 <Comments
-                comment={comment}
+                    key={index}
+                    comment={comment}
                 />
         );
 
