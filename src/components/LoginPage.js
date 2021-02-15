@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { loginUser } from "../redux/actions/userActions";
-import "../css/LoginPageCSS.css";
+import "../scss/LoginPage.scss";
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import "../css/PersonelHeaderCSS.css"
+import "../scss/PersonalHeader.scss"
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 

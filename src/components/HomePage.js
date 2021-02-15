@@ -5,6 +5,8 @@ import { getAllUsers } from "../redux/actions/userActions";
 import PersonalHeader from "./PersonalHeader";
 import IndividualPosts from "./IndividualPosts";
 import "../css/HomePageCSS.css";
+import { AiFillBackward } from "react-icons/ai";
+import { AiFillForward } from "react-icons/ai";
 
 
 
@@ -92,7 +94,13 @@ class HomePage extends Component {
                 <PersonalHeader />
                 {postMarkUp}
                 <ul className="page-list">
+                    <li className="page-list-elements">
+                        <AiFillBackward />
+                    </li>
                     {pagesMarkUp}
+                    <li className="page-list-elements">
+                        <AiFillForward />
+                    </li>
                 </ul>
             </div>
         );

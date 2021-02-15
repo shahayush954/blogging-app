@@ -1,0 +1,121 @@
+.container {
+  margin-top: 10rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  position: relative;
+}
+
+.login-card {
+  width: 25rem;
+  border: 1px solid #d9d9d9;
+  border-radius: 0.5rem;
+  text-align: left;
+  padding-left: 2rem;
+  padding-bottom: 2rem;
+  font-size: 1.25rem;
+  color: #737373;
+  -webkit-box-shadow: 0 8px 16px 0 #b5babe;
+          box-shadow: 0 8px 16px 0 #b5babe;
+}
+
+.login-form-input {
+  width: 20rem;
+  height: 1.5rem;
+  border: 2px solid #d9d9d9;
+  border-radius: 0.5rem;
+  padding-left: 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: #737373;
+}
+
+.login-card h3 {
+  padding-left: 9rem;
+}
+
+.login-form-submit {
+  width: 15rem;
+  height: 2rem;
+  background-color: #0275d8;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.login-error-toast {
+  position: absolute;
+  top: -8rem;
+  right: 1rem;
+  width: 20rem;
+  height: 6rem;
+  border: 1px solid #ff0000;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(255, 0, 0, 0.5);
+          box-shadow: 0 4px 8px 0 rgba(255, 0, 0, 0.5);
+  border-radius: 0.5rem;
+}
+
+.login-error-toast-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  margin-top: 1rem;
+  color: #ff0000;
+  font-size: 1.10rem;
+}
+
+.login-error-toast-icon {
+  padding-right: 0.25rem;
+  padding-left: 0.5rem;
+  height: 1.5rem;
+}
+
+.login-error-toast-icon :hover {
+  cursor: pointer;
+}
+
+.login-error-toast-close-icon {
+  margin-left: 7rem;
+  height: 1.5rem;
+}
+
+.login-error-toast-hr {
+  width: 18rem;
+  background: #ff0000;
+  border: 0;
+  height: 0.1rem;
+  opacity: 0.4;
+}
+
+.login-error-toast-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  font-size: 1.1rem;
+  color: #ff0000;
+  margin-left: 2rem;
+}
+/*# sourceMappingURL=LoginPage.css.map */

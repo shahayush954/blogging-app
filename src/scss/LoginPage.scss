@@ -1,0 +1,109 @@
+@import "./partials/variables";
+@import "./partials/custom_mixins";
+
+.container {
+    margin-top: 10rem;
+    @include flex-box($horizontal: center);
+    position: relative;
+}
+
+.login-card{
+    width: 25rem;
+    @include create-border(1px,$primary-border-color);
+    border-radius: 0.5rem;
+    text-align: left;
+    padding-left: 2rem;
+    padding-bottom: 2rem;
+    font-size: 1.25rem;
+    color: $primary-text-color;
+    @include create-box-shadow(8px, 16px, $primary-box-shadow-color);
+
+    Form.Label{
+        font-family: $title-text-font;
+    }
+}
+
+.login-form-input{
+    width: 20rem;
+    height: 1.5rem;
+    @include create-border(2px,$primary-border-color);
+    border-radius: 0.5rem;
+    padding-left: 0.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: $primary-text-color;
+    font-family: $text-font;
+}
+
+.login-card h3{
+    font-family: $title-text-font;
+    padding-left: 9rem;
+}
+
+.login-form-submit{
+    width: 10rem;
+    height: 3rem;
+    background-color: $primary-button-color;
+    color: $primary-button-text-color;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    font-family: $title-text-font;
+}
+
+.login-error-toast{
+    position: absolute;
+    top: -8rem;
+    right: 1rem;
+    width: 20rem;
+    height: 6rem;
+    @include create-border(1px, $primary-toast-color);
+    @include create-box-shadow(4px, 8px, $primary-toast-box-shadow-color);
+    border-radius: 0.5rem;
+}
+
+
+.login-error-toast-header{
+    @include flex-box($horizontal: flex-start);
+    margin-top: 1rem;
+    color: $primary-toast-color;
+    font-size: 1rem;
+    font-family: $title-text-font;
+}
+
+.login-error-toast-icon{
+    padding-right: 0.25rem;
+    padding-left: 0.5rem;
+    height: 1.5rem;
+}
+
+
+.login-error-toast-close-icon{
+    margin-left: 7rem;
+    height: 1.5rem;
+    
+    :hover{
+        cursor: pointer;
+    }
+}
+
+
+.login-error-toast-hr{
+    width: 18rem;
+    background:$primary-toast-color;
+    border: 0;
+    height: 0.1rem;
+    opacity: 0.4;
+}
+
+.login-error-toast-body{
+    @include flex-box($horizontal: flex-start);
+    font-size: 1.1rem;
+    color: $primary-toast-color;
+    margin-left: 2rem;
+    font-family: $text-font;
+}

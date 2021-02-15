@@ -1,0 +1,46 @@
+@import "./partials/variables";
+@import "./partials/custom_mixins";
+
+.personal-header-container{
+    margin: 0 auto;
+    text-align: left;
+    width: 50rem;
+    background-color: lighten($primary-border-color, 10%);
+    margin-top: 2rem; 
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.personal-header-title{
+    margin-left: 4rem;
+    margin-bottom: 0.5rem;
+    font-family: $title-text-font;
+}
+
+.personal-header-user-details{
+    margin-left: 4rem;
+    margin-top: 0.4rem;
+    margin-bottom: 0.4rem;
+    font-family: $text-font;
+}
+
+.personal-header-hr{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    height: 0.1rem;
+    width: 45rem;
+    background-color: darken($primary-border-color,10%);
+}
+
+.personal-header-button{
+    height: 3rem;
+    width: 10rem;
+    color: $primary-button-text-color;
+    background-color: $primary-button-color;
+    border: 0;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    cursor: pointer;
+    font-family: $text-font;
+}

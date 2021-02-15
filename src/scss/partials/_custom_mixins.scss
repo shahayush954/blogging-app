@@ -1,0 +1,15 @@
+@import "./variables";
+
+@mixin flex-box($horizontal: flex-start, $vertical: stretch) {
+    display: flex;
+    justify-content: $horizontal;
+    align-items: $vertical;
+}
+
+@mixin create-border($borderWidth, $borderColor) {
+    border: $borderWidth solid $borderColor;
+}
+
+@mixin create-box-shadow($offset-y, $blur-radius, $boxShadowColor) {
+    box-shadow: 0 $offset-y $blur-radius 0 $boxShadowColor;
+}
