@@ -4,7 +4,7 @@ import { getAllPosts } from "../redux/actions/dataActions";
 import { getAllUsers } from "../redux/actions/userActions";
 import PersonalHeader from "./PersonalHeader";
 import IndividualPosts from "./IndividualPosts";
-import "../css/HomePageCSS.css";
+import "../scss/HomePage.scss";
 import { AiFillBackward } from "react-icons/ai";
 import { AiFillForward } from "react-icons/ai";
 
@@ -16,7 +16,7 @@ class HomePage extends Component {
         super();
         this.state = {
             currentPage: 1,
-            postsPerPage: 10,
+            postsPerPage: 12,
         }
 
         this.changePostsPerPage = this.changePostsPerPage.bind(this);
@@ -92,7 +92,9 @@ class HomePage extends Component {
         return (
             <div className="home-container">
                 <PersonalHeader />
-                {postMarkUp}
+                <div className="post-markup-container">
+                    {postMarkUp}
+                </div>
                 <ul className="page-list">
                     <li className="page-list-elements">
                         <AiFillBackward />

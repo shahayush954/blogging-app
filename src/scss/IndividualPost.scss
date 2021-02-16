@@ -1,0 +1,41 @@
+@import "./partials/custom_mixins";
+@import "./partials/variables";
+
+.individual-post-container{
+    margin-top: 2rem;
+    @include flex-box($horizontal: center);
+    flex-direction: column;
+    flex: 1;
+    margin-left: $individual-post-margin;
+}
+
+.individual-post-card{
+    width: 20rem;
+    max-width: 20rem;
+    height: 15rem;
+    @include create-border(1px, $primary-border-color);
+    border-radius: 0.5rem;
+    text-align: left;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    color: $primary-text-color;
+    @include create-box-shadow(4px,8px,$primary-box-shadow-color);
+}
+
+.individual-post-title{
+    font-size: 1.25rem;
+    font-weight: 500;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-family: $title-text-font;
+}
+
+.individual-post-body{
+    padding-bottom: 2rem;
+    margin-right: 2rem;
+    font-family: $text-font;
+}
+
+.read-more{
+    color: $primary-link-text-color;
+}

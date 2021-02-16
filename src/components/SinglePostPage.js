@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import Card from 'react-bootstrap/Card';
 import Comments from "./Comments";
-import "../css/SinglePostPageCSS.css";
+import "../scss/SinglePostPage.scss";
 import {IoMdArrowRoundBack} from "react-icons/io"
 import { getAllComments } from "../redux/actions/dataActions"
 

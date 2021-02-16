@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import "../css/IndividualPostCSS.css";
+import "../scss/IndividualPost.scss";
 import Card from "react-bootstrap/Card";
 import { Link } from 'react-router-dom';
 

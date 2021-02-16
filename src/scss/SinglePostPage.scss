@@ -1,0 +1,57 @@
+@import "./partials/variables";
+@import "./partials/custom_mixins";
+
+
+.single-page-card{
+    background-color: $primary-background-color;
+    color: $primary-text-color;
+    margin-top: -8rem;
+    margin-bottom: 3rem;
+    text-align: left;
+    width: 60rem;
+    padding-top: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 2rem;
+    @include create-box-shadow(8px,16px,$primary-box-shadow-color);
+}
+
+.single-page-title{
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: $title-text-font;
+}
+
+.single-page-subtitle{
+    margin-top: 0.5rem;
+    font-style: italic;
+    font-weight: 500;
+    font-family: $text-font;
+}
+
+.single-page-body{
+    margin-top: 1rem;
+    text-align: justify;
+    font-family: $text-font;
+}
+
+.single-page-back-button{
+    cursor: pointer;
+}
+
+.single-page-hr{
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    @include create-border(1px,$primary-border-color);
+    border-radius: 50%;
+    height: 0.07rem;
+    width: 58rem;
+    background-color: $primary-border-color;
+}
+
+.single-page-comments-title{
+    font-size: 2rem;
+    font-weight: 500;
+    font-style: italic;
+    font-family: $title-text-font;
+}
